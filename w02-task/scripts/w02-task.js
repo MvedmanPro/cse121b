@@ -31,7 +31,7 @@ const imageElement = document.querySelector("#home picture img");
 /* Step 4 - Adding Content */
 
 nameElement.innerHTML = `<strong>${fullName}</strong>`;
-yearElement.textContent = ("currentYear");
+yearElement.textContent = ("2023");
 
 //*
 imageElement.setAttribute("src", profilePicture);

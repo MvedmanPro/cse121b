@@ -50,7 +50,7 @@ const reset = () => {
 const sortBy = (temples) => {
     reset();
     let filter = document.getElementById("sortBy").value;
-    
+
     switch (filter) {
 
       case "utah":
@@ -66,7 +66,7 @@ const sortBy = (temples) => {
       case "older":
         displayTemples(
             temples.filter(
-                (temple) => new Date(temple.dedicated) < new Date("1950-01-01")
+                (temple) => new Date(temple.dedicated) < new Date(1950, 0, 1)
             ));
         break;
 

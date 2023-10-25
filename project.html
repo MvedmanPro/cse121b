@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/cse121b/final_project/styles.css">
+</head>
+<body>
+    <div id="weather">
+    <h1> Welcome to the Weather App</h1>
+    </div>
+    <form id="weather-form">
+        <input type="text" id="city" placeholder="Enter city name">
+        <button type="submit">Get Weather</button>
+    </form>
+
+
+    <footer>
+        <script type="module" src="/cse121b/final_project/fetchData.js"></script>
+        <script type="module" src="/cse121b/final_project/domManipulation.js"></script>  
+      ©<span id="year"></span> | Week 07 - Final project - Kateryna Glazkova | CSE 121b
+      </footer>
+      <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+      </script>
+</body>
+</html>
+
+

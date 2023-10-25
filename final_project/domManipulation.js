@@ -4,7 +4,6 @@ import { weatherData, getWeatherData } from '/cse121b/final_project/fetchData.js
 let now = new Date();
 let dateTime = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
 
-// Function to display weather data
 export function displayWeatherData() {
     const weatherDiv = document.getElementById('weather');
     if (weatherDiv) { // Check if the element exists
@@ -12,6 +11,11 @@ export function displayWeatherData() {
 
         // Use of template literals and array method (forEach)
         weatherData.forEach(data => {
+            // Get timezone offset in milliseconds
+            const timezoneOffset = data.timezone * 1000;
+            const localTime = new Date(Date.now() + timezoneOffset);
+            const dateTime = `${localTime.toLocaleDateString()} ${localTime.toLocaleTimeString()}`;
+
             const weatherInfo = `
                 <h2>Weather in ${data.name}</h2>
                 <p>Right now: ${dateTime}</p> 
@@ -25,6 +29,7 @@ export function displayWeatherData() {
         });
     }
 }
+
 
 // Event listener for the form submission
 document.getElementById('weather-form').addEventListener('submit', function(e) {
